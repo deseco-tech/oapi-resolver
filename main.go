@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+)
 
 func main() {
-	fmt.Println("Hello oapi-resolver")
+	var inputFile, outputFile string
+
+	flag.StringVar(&inputFile, "i", "", "input file path")
+	flag.StringVar(&outputFile, "o", "", "output file path")
+	flag.Parse()
 }
