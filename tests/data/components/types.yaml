@@ -1,0 +1,15 @@
+Config:
+  type: object
+  properties:
+    base_url:
+      type: string
+      format: url
+    name:
+      type: string
+Item:
+  type: object
+  properties:
+    config:
+      $ref: '#/components/schemas/Config'
+    identifier:
+      type: string

@@ -1,0 +1,21 @@
+openapi: 3.0.0
+components:
+  schemas:
+    Config:
+      $ref: components/types.yaml#/Config
+    Item:
+      $ref: components/types.yaml#/Item
+  responses:
+    CreateResponse:
+      $ref: components/responses.yaml#/CreateResponse
+  requestBodies:
+    CreateRequest:
+      $ref: components/requests.yaml#/CreateRequest
+paths:
+    post:
+      operationId: Create
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRequest'
+      responses:
+        "201":
+          $ref: '#/components/responses/CreateResponse'

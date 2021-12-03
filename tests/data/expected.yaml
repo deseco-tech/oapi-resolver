@@ -1,0 +1,45 @@
+openapi: 3.0.0
+components:
+  schemas:
+    Config:
+      properties:
+        base_url:
+          format: url
+          type: string
+        name:
+          type: string
+      type: object
+    Item:
+      properties:
+        config:
+          $ref: '#/components/schemas/Config'
+        identifier:
+          type: string
+      type: object
+  responses:
+    CreateResponse:
+      content:
+        application/json:
+          schema:
+            properties:
+              data:
+                properties:
+                  retailer:
+                    $ref: '#/components/schemas/Item'
+                type: object
+  requestBodies:
+    CreateRequest:
+      content:
+        application/json:
+          schema:
+            properties:
+              config:
+                $ref: '#/components/schemas/Config'
+paths:
+    post:
+      operationId: Create
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRequest'
+      responses:
+        "201":
+          $ref: '#/components/responses/CreateResponse'

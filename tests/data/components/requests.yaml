@@ -1,0 +1,7 @@
+CreateRequest:
+  content:
+    application/json:
+      schema:
+        properties:
+          config:
+            $ref: '#/components/schemas/Config'

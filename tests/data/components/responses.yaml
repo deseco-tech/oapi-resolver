@@ -1,0 +1,10 @@
+CreateResponse:
+  content:
+    application/json:
+      schema:
+        properties:
+          data:
+            type: object
+            properties:
+              retailer:
+                $ref: '#/components/schemas/Item'
